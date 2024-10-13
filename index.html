@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collage for you</title>
+    <link rel="stylesheet" href="src/style/main.css" />
+    <link rel="stylesheet" href="src/style/style.css">
+
+    <style>
+      .hide-scroll-bar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .hide-scroll-bar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w-[100%] h-[100%] justify-between mx-auto items-center">
+      <nav class="relative grid grid-flow-col">
+        <h1
+          class="uppercase font-bold font-sans p-3 text-[1rem] sm:p-5 md:p-10 sm:text-xl md:text-3xl"
+        >
+          College for you
+        </h1>
+        <i
+          class="fa-regular fa-paper-plane absolute ml-[10rem] mt-2 sm:ml-[14.5rem] sm:mt-2 sm:text-[1.5rem] md:ml-[19rem] md:mt-5"
+        ></i>
+
+        <div class="-ml-[30rem]">
+          <ul
+            class="lg:flex absolute ml-[15rem] mt-[2.5rem] hidden sm:hidden md:mt-12 md:gap-10 md:font-light cursor-pointer"
+          >
+            <li>Colleges <i class="fa-solid fa-angle-down text-xs"></i></li>
+            <li>Courses <i class="fa-solid fa-angle-down text-xs"></i></li>
+            <li>Exam <i class="fa-solid fa-angle-down text-xs"></i></li>
+            <li>
+              Latest Update <i class="fa-solid fa-angle-down text-xs"></i>
+            </li>
+            <li>More <i class="fa-solid fa-angle-down text-xs"></i></li>
+            <li><i class="fa-solid fa-user"></i></li>
+            <li><i class="fa-solid fa-magnifying-glass"></i></li>
+          </ul>
+        </div>
+
+        <!-- Dropdown container -->
+        <div
+          class="absolute inline-block text-left lg:hidden sm:mt-[2.5rem] right-5 mt-3"
+        >
+          <i
+            id="dropdownButton"
+            class="fa-solid fa-bars inline-flex justify-center items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 focus:outline-2 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 sm:text-[1.5rem]"
+          ></i>
+
+          <!-- Dropdown menu -->
+          <div
+            id="dropdownMenu"
+            class="origin-top-right absolute -right-7 mt-2 w-56 rounded-md shadow-lg bg-white/90 ring-1 ring-black ring-opacity-5 transition-opacity duration-300 ease-in-out opacity-0 z-10"
+          >
+            <div
+              class="py-1"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="options-menu"
+            >
+              <div class="flex items-center justify-center">
+                <button class="border-4 rounded-lg">
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm font-bold text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    role="menuitem"
+                    >Login
+                  </a>
+                </button>
+                <button class="border-4 rounded-lg ml-5">
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm font-bold text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    role="menuitem"
+                    >Sign up</a
+                  >
+                </button>
+              </div>
+              <!-- Dropdown items -->
+              <a
+                href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                role="menuitem"
+                >Colleges</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                role="menuitem"
+                >Courses</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                role="menuitem"
+                >Exam</a
+              >
+
+              <a
+                href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                role="menuitem"
+                >Latest Update</a
+              >
+
+              <a
+                href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                role="menuitem"
+                >More</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- slide text -->
+
+      <div
+        class="absolute mt-[7rem] ml-5  w-[15rem] md:w-[35rem] md:ml-[10rem] md:mt-14"
+      >
+        <h1
+          class="text-[1.5rem] w-full ml-[2rem] md:mt-[2rem] font-bold font-serif -mt-5 sm:-ml-5 md:text-[3.5rem] lg:-mt-2"
+        >
+          Find Your Dream
+          <p class=" absolute text-[#9333ea] -mb-10 sm:ml-[5.5rem] lg:-ml-1 lg:-mt-3 ">
+            C<span id="typewriter"></span>
+          </p>
+        </h1>
+
+        <div class="relative mt-[3rem] md:mt-[5rem]">
+        <p
+          class="font-normal  mt-[2rem] w-[15rem] ml-[3rem] sm:ml-[10rem] md:w-[25rem] md:ml-5 lg:-ml-4"
+        >
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          <span class="hidden md:inline"
+            >Lorem ipsum dolor sit, amet consectetur adipisicing elit.Lorem
+            ipsum dolor sit, amet consectetur adipisicing elit.</span
+          >
+        </p>
+        <div
+          class="mt-7 md:mt-14 flex absolute gap-5 scale-90 hover:scale-110 transition-all duration-500"
+        >
+          <button
+            class="font-bold border-2 ml-[1.5rem] w-[15rem] bg-purple-300 shadow-purple-600 shadow-md sm:-mt-[2rem] sm:ml-[3.2rem] rounded-lg sm:w-[20rem]  h-10 lg:-ml-10"
+          >
+            Find your Dream <i class="fa-regular fa-paper-plane"></i>
+          </button>
+        </div>
+        </div>
+      </div>
+
+      <!-- slide -->
+
+      <div class="absolute md:-mt-40 -z-20" id="slider">
+        <div class="overflow-hidden">
+          <div
+            class="flex transition-transform duration-300 ease-in-out"
+            id="slidesContainer"
+          >
+            <div class="w-full flex-shrink-0">
+              <img
+                src="src/images/slide-1.png"
+                alt="Slide 1"
+                class="h-[20rem] sm:w-[55rem] sm:h-[30rem] md:w-[85.7rem] md:h-[38rem] overflow-hidden"
+              />
+            </div>
+            <div class="w-full flex-shrink-0">
+              <img
+                src="src/images/slide-2.png"
+                alt="Slide 1"
+                class="h-[20rem] sm:w-[55rem] sm:h-[30rem] md:w-[85.7rem] md:h-[38rem] overflow-hidden"
+              />
+            </div>
+            <div class="w-full flex-shrink-0">
+              <img
+                src="src/images/slide-1.png"
+                alt="Slide 1"
+                class="h-[20rem] sm:w-[55rem] sm:h-[30rem] md:w-[85.7rem] md:h-[38rem] overflow-hidden"
+              />
+            </div>
+            <div class="w-full flex-shrink-0">
+              <img
+                src="src/images/slide-2.png"
+                alt="Slide 1"
+                class="h-[20rem] sm:w-[55rem] sm:h-[30rem] md:w-[85.7rem] md:h-[38rem] overflow-hidden"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card slider -->
+        <div
+          class="relative mt-[20rem]  md:mt-[30rem] items-center justify-between lg:hidden"
+        >
+          <div class=" overflow-x-scroll pb-10 hide-scroll-bar">
+            <div
+              class="flex-wrap items-center ml-[2.1rem]"
+            >
+              <div
+                class="w-auto mr-7 h-[10rem] -ml-2 sm:w-[43.5rem] sm:ml-7 mt-5 lg:ml-5 lg:max-w-xs overflow-hidden rounded-lg shadow-2xl bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
+              >
+                <div class="flex mt-3">
+                  <i
+                    class="fa-solid fa-graduation-cap lg:text-[#63E6BE] text-[#ff7e47ea] text-[1.5rem] px-3 md:ml-[1rem] md:mt-[1rem] md:text-[2rem]"
+                  ></i>
+                  <h1 class="font-bold md:ml-3 md:mt-5">
+                    Best Engineering Colleges
+                  </h1>
+                </div>
+                <p class="md:mt-3 mt-5 text-[0.9rem] px-3">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Rerum, officia?
+                </p>
+                <div class="mt-2 mb-2">
+                  <a href="#" class="px-3 text-purple-700">Learn More +</a>
+                </div>
+              </div>
+
+              <div
+                class="w-auto mr-7 h-[10rem] -ml-2 sm:w-[43.5rem] sm:ml-7 mt-5 llg:max-w-xs overflow-hidden rounded-lg shadow-2xl bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
+              >
+                <div class="flex mt-3">
+                  <i
+                    class="fa-solid fa-graduation-cap lg:text-[#63E6BE] text-[#ff7e47ea] text-[1.5rem] px-3 md:ml-[1rem] md:mt-[1rem] md:text-[2rem]"
+                  ></i>
+                  <h1 class="font-bold md:ml-3 md:mt-5">
+                    Best Engineering Colleges
+                  </h1>
+                </div>
+                <p class="md:mt-3 mt-5 text-[0.9rem] px-3">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Rerum, officia?
+                </p>
+                <div class="mt-2 mb-2">
+                  <a href="#" class="px-3 text-purple-700">Learn More +</a>
+                </div>
+              </div>
+
+              <div
+                class="w-auto mr-7 h-[10rem] -ml-2 sm:w-[43.5rem] sm:ml-7 mt-5 lg:ml-5 lg:max-w-xs overflow-hidden rounded-lg shadow-2xl bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
+              >
+                <div class="flex mt-2">
+                  <i
+                    class="fa-solid fa-graduation-cap lg:text-[#63E6BE] text-[#ff7e47ea] text-[1.5rem] px-3 md:ml-[1rem] md:mt-[1rem] md:text-[2rem]"
+                  ></i>
+                  <h1 class="font-bold md:ml-3 md:mt-5">
+                    Best Engineering Colleges
+                  </h1>
+                </div>
+                <p class="md:mt-3 mt-5 text-[0.9rem] px-3">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Rerum, officia?
+                </p>
+                <div class="mt-5 mb-2">
+                  <a href="#" class="px-3 text-purple-700">Learn More +</a>
+                </div>
+              </div>
+
+              <div
+                class="w-auto mr-7 h-[10rem] -ml-2 sm:w-[43.5rem] sm:ml-7 mt-5 lg:ml-5 lg:max-w-xs overflow-hidden rounded-lg shadow-2xl bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
+              >
+                <div class="flex mt-2">
+                  <i
+                    class="fa-solid fa-graduation-cap lg:text-[#63E6BE] text-[#ff7e47ea] text-[1.5rem] px-3 md:ml-[1rem] md:mt-[1rem] md:text-[2rem]"
+                  ></i>
+                  <h1 class="font-bold md:ml-3 md:mt-5">
+                    Best Engineering Colleges
+                  </h1>
+                </div>
+                <p class="md:mt-3 mt-3 text-[0.9rem] px-3">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Rerum, officia?
+                </p>
+                <div class="mt-5 mb-2">
+                  <a href="#" class="px-3 text-purple-700">Learn More +</a>
+                </div>
+              </div>
+
+              <div
+                class="w-auto mr-7 h-[10rem] -ml-2 sm:w-[43.5rem] sm:ml-7 mt-5 lg:ml-5 lg:max-w-xs overflow-hidden rounded-lg shadow-2xl bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
+              >
+                <div class="flex mt-2">
+                  <i
+                    class="fa-solid fa-graduation-cap lg:text-[#63E6BE] text-[#ff7e47ea] text-[1.5rem] px-3 md:ml-[1rem] md:mt-[1rem] md:text-[2rem]"
+                  ></i>
+                  <h1 class="font-bold md:ml-3 md:mt-5">
+                    Best Engineering Colleges
+                  </h1>
+                </div>
+                <p class="md:mt-3 mt-3 px-3">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Rerum, officia?
+                </p>
+                <div class="mt-5 mb-2">
+                  <a href="#" class="px-3 text-purple-700">Learn More +</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
+      <div class="scroller hidden lg:block" data-direction="right" data-speed="slow">
+        <div class="scroller__inner flex">
+          <div
+                class="w-[21rem] lg:max-w-xs overflow-hidden md:shadow-slate-500 rounded-lg shadow-md bg-white"
+              >
+                <div class="flex mt-2">
+                  <i
+                    class="fa-solid fa-graduation-cap lg:text-[#63E6BE] text-[#ff7e47ea] text-[1.5rem] px-3 md:ml-[1rem] md:mt-[1rem] md:text-[2rem]"
+                  ></i>
+                  <h1 class="font-bold ml-3 md:ml-3 md:mt-5">
+                    Best Engineering Colleges
+                  </h1>
+                </div>
+                <p class="mt-5 md:mt-3 px-3">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Rerum, officia?
+                </p>
+                <div class="mt-5 mb-2">
+                  <a href="#" class="px-3 text-purple-700">Learn More +</a>
+                </div>
+          </div>
+
+          <div
+                class="w-[21rem] lg:w-[30rem] lg:max-w-xs overflow-hidden md:shadow-slate-500 rounded-lg shadow-md bg-white "
+              >
+                <div class="flex mt-2">
+                  <i
+                    class="fa-solid fa-graduation-cap lg:text-[#63E6BE] text-[#ff7e47ea] text-[1.5rem] px-3 md:ml-[1rem] md:mt-[1rem] md:text-[2rem]"
+                  ></i>
+                  <h1 class="font-bold ml-3 md:ml-3 md:mt-5">
+                    Best Engineering Colleges
+                  </h1>
+                </div>
+                <p class="mt-5 md:mt-3 px-3">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Rerum, officia?
+                </p>
+                <div class="mt-5 mb-2">
+                  <a href="#" class="px-3 text-purple-700">Learn More +</a>
+                </div>
+          </div>
+
+          <div
+                class="slide w-[21rem] lg:max-w-xs overflow-hidden md:shadow-slate-500 rounded-lg shadow-md bg-white"
+              >
+                <div class="flex mt-2">
+                  <i
+                    class="fa-solid fa-graduation-cap lg:text-[#63E6BE] text-[#ff7e47ea] text-[1.5rem] px-3 md:ml-[1rem] md:mt-[1rem] md:text-[2rem]"
+                  ></i>
+                  <h1 class="font-bold ml-3 md:ml-3 md:mt-5">
+                    Best Engineering Colleges
+                  </h1>
+                </div>
+                <p class="mt-5 md:mt-3 px-3">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Rerum, officia?
+                </p>
+                <div class="mt-5 mb-2">
+                  <a href="#" class="px-3 text-purple-700">Learn More +</a>
+                </div>
+          </div>
+
+          <div
+                class="slide w-[21rem] lg:max-w-xs overflow-hidden md:shadow-slate-500 rounded-lg shadow-md bg-white"
+              >
+                <div class="flex mt-2">
+                  <i
+                    class="fa-solid fa-graduation-cap lg:text-[#63E6BE] text-[#ff7e47ea] text-[1.5rem] px-3 md:ml-[1rem] md:mt-[1rem] md:text-[2rem]"
+                  ></i>
+                  <h1 class="font-bold ml-3 md:ml-3 md:mt-5">
+                    Best Engineering Colleges
+                  </h1>
+                </div>
+                <p class="mt-5 md:mt-3 px-3">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Rerum, officia?
+                </p>
+                <div class="mt-5 mb-2">
+                  <a href="#" class="px-3 text-purple-700">Learn More +</a>
+                </div>
+          </div>
+
+          <div
+                class="slide w-[21rem] lg:max-w-xs overflow-hidden md:shadow-slate-500 rounded-lg shadow-md bg-white"
+              >
+                <div class="flex mt-2">
+                  <i
+                    class="fa-solid fa-graduation-cap lg:text-[#63E6BE] text-[#ff7e47ea] text-[1.5rem] px-3 md:ml-[1rem] md:mt-[1rem] md:text-[2rem]"
+                  ></i>
+                  <h1 class="font-bold ml-3 md:ml-3 md:mt-5">
+                    Best Engineering Colleges
+                  </h1>
+                </div>
+                <p class="mt-5 md:mt-3 px-3">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Rerum, officia?
+                </p>
+                <div class="mt-5 mb-2">
+                  <a href="#" class="px-3 text-purple-700">Learn More +</a>
+                </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="p-10 w-full h-[20rem] sm:h-[20rem] bg-black/5 absolute flex">
+        <div>
+          <h1 class="lg:text-[3rem] font-bold">About us</h1>
+          <p class="italic lg:w-[30rem] w-[15rem] md:w-[20rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, quos iste cumque corporis id rem odit illum consectetur ad sit facilis mollitia, incidunt porro asperiores.</p>
+          <a href="#"> <button class="font-bold text-center justify-between mt-10 ml-10 border-2 border-black w-[10rem] scale-90 hover:scale-110 duration-500 rounded-md ">Lean More</button></a>
+        </div>
+        <div class="relative hidden md:block">
+            <img src="src/images/about_img.png" class="lg:h-[25rem] lg:w-[40rem] md:-mt-5 lg:-mt-20 mix-blend-color-burn">
+        </div>   
+      </div>
+
+
+    </div>
+
+    <!-- icon CDN Link -->
+    <script
+      src="https://kit.fontawesome.com/5ad7b368d8.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="src/javaScript/slide.js"></script>
+    <script src="src/javaScript/type.js"></script> 
+
+
+
+    <script>
+      document
+        .getElementById("dropdownButton")
+        .addEventListener("click", function () {
+          let menue = document.getElementById("dropdownMenu");
+          menue.classList.toggle("opacity-0");
+          menue.classList.toggle("opacity-100");
+        });
+    </script>
+
+    <script>
+      const slider = document.getElementById("slider");
+      const slidesContainer = document.getElementById("slidesContainer");
+      let slideIndex = 0;
+
+      function nextSlide() {
+        slideIndex = (slideIndex + 1) % slidesContainer.children.length;
+        const slideWidth = slider.offsetWidth;
+        slidesContainer.style.transform = `translateX(-${
+          slideIndex * slideWidth
+        }px)`;
+      }
+
+      setInterval(nextSlide, 3000);
+    </script>
+
+    
+  </body>
+</html>
