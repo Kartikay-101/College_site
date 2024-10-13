@@ -21,13 +21,13 @@ The project has the following structure:
 - `src/`: The source directory containing all the assets and scripts.
   - `images/`: Directory for storing images.
   - `javaScript/`: Directory for JavaScript files.
-    - `slide.js`: JavaScript file for handling slide functionality.
-    - `type.js`: JavaScript file for handling typing functionality.
+    - [`slide.js`](src/javaScript/slide.js): JavaScript file for handling slide functionality.
+    - [`type.js`](src/javaScript/type.js): JavaScript file for handling typing functionality.
   - `style/`: Directory for CSS files.
-    - `main.css`: Main CSS file.
-    - `output.css`: Output CSS file.
-    - `style.css`: Additional CSS file.
-  - `tailwind.config.js`: Configuration file for Tailwind CSS.
+    - [`main.css`](src/style/main.css): Main CSS file.
+    - [`output.css`](src/style/output.css): Output CSS file.
+    - [`style.css`](src/style/style.css): Additional CSS file.
+  - [`tailwind.config.js`](src/tailwind.config.js): Configuration file for Tailwind CSS.
 - `package.json`: Contains metadata about the project and its dependencies.
 
 ## Installation
@@ -45,6 +45,44 @@ To set up the project locally, follow these steps:
 3. Install the dependencies:
     ```sh
     npm install
+    ```
+
+### Installing Tailwind CSS
+
+To install Tailwind CSS, follow these steps:
+
+1. Install Tailwind CSS via npm:
+    ```sh
+    npm install -D tailwindcss
+    ```
+2. Create a `tailwind.config.js` file:
+    ```sh
+    npx tailwindcss init
+    ```
+3. Configure the `tailwind.config.js` file to include your content paths:
+    ```js
+    /** @type {import('tailwindcss').Config} */
+    module.exports = {
+      content: ["*"],
+      theme: {
+        extend: {
+          screens: {
+            sm: "640px",
+            md: "768px",
+            lg: "1024px",
+            xl: "1280px",
+            "2xl": "1536px",
+          },
+        },
+      },
+      plugins: [],
+    }
+    ```
+4. Add the Tailwind directives to your CSS file (`src/style/main.css`):
+    ```css
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
     ```
 
 ## Usage
