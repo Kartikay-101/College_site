@@ -16,6 +16,7 @@ import iimtBg from '../Assets/Images/college2.jpg';
 
 import Crousel_Images from "./Crousel_Images";
 import Footer from "./Footer";
+import RecommendedCollegesCarousel from "./RecommendedCollegesCarousel";
 
 function Banner() {
   var cards = {
@@ -166,27 +167,8 @@ function Banner() {
 
 
       {/* top reccommeded college */}
-      <div className="bg-white text-black">
-        <h1 className="text-4xl pl-10 mb-10">Top Recommended College</h1>
-        <div className="bg-white flex justify-center pb-10 pl-10 h-80 w-auto ">
-          {[...Array(3)].map((_, index) => (
-            <div className="card image-full mr-10">
-              <figure>
-                <img src={college1} alt="gl bajaj" className="" />
-              </figure>
-              <div className=" absolute card-body items-center -mt-6">
-                <h2 className="card-title  text-center text-white">
-                  G L Bajaj Institute of <br /> Technology and Management
-                </h2>
-              </div>
-              <div className="card-body items-end justify-between flex-row ">
-                <h5 className=" text-white cursor-pointer">Get Admission</h5>
-                <h5 className=" text-white cursor-pointer">learn more..</h5>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <RecommendedCollegesCarousel />
+  
       <div className="bg-white text-black p-10 ">
         <ul className="flex justify-center gap-52">
           <li className="flex flex-col justify-center items-center">
@@ -249,23 +231,24 @@ function Banner() {
         </div>
       </div>
       {/* top college */}
-      <div className="bg-white pb-10 text-black">
-        <h1 className="text-4xl pl-10 pb-10 text-black">Top Colleges</h1>
+      <div className="bg-white pb-10 text-black ">
+      <h1 className="text-4xl pl-40 text-black font-bold">Top 10 Colleges in Greater Noida</h1>
         {[...Array(3)].map((_, index) => (
           <div className="flex justify-center mt-10">
             {[...Array(3)].map((_, index) => (
               <div className="text-center items-center justify-center flex mr-10">
-                <div className="card card-compact bg-white w-96 shadow-xl">
+                <div className="card card-compact bg-white shadow-xl border border-black" style={{ width: '350px', height: '350px' }}>
                   <figure>
                     <img src={college1} alt="Glbajaj" />
                   </figure>
-                  <div className="card-body">
-                    <h2 className="card-title">
+                  <div className="card-body" style={{ backgroundColor: 'rgba(224, 232, 247, 0.7)' }}>
+                  <img src={glbajajLogo} alt="GL Bajaj Logo" style={{ position: 'absolute', top: '10px', left: '10px', width: '50px', height: '50px' }} />
+                    <h2 className="card-title ">
                       G L Bajaj Institute of Technology and Management
                     </h2>
                     <p>NAAC Ranking :- A+ grade</p>
                     <p>
-                      All courses detail <a href="#">click here {">>"}</a>
+                      All courses detail <a href="#"><span style={{ color: 'blue', fontWeight: 'bold' }}>click here {">>"}</span> </a>
                     </p>
                   </div>
                 </div>
@@ -274,6 +257,7 @@ function Banner() {
           </div>
         ))}
       </div>
+      
       <div className="bg-yellow-100 text-black pl-10 flex h-40 p-10 justify-center items-center space-x-6">
         <div className="w-fit">
           <h1 className="text-3xl font-bold font-serif">
