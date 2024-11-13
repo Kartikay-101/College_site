@@ -7,7 +7,7 @@ import certificate from "../Assets/Images/certificate.png";
 import course from "../Assets/Images/course.png";
 import internship from "../Assets/Images/internship.png";
 import rating from "../Assets/Images/rating.png";
-import Bannerone from "./Bannerone";
+import Crousel_Images from "./Crousel_Images";
 import Footer from "./Footer";
 
 function Banner() {
@@ -49,7 +49,7 @@ function Banner() {
   return (
     <>
       {/* college banner */}
-      <Bannerone />
+      <Crousel_Images />
       {/* banner */}
       <div className="items-center justify-center flex flex-col bg-white h-full text-black">
         <img src={rankings} alt="ranking" className="h-40" />

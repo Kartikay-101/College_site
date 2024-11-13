@@ -8,7 +8,7 @@ import college1 from "../Assets/Images/college1.jpg";
 import college2 from "../Assets/Images/college2.jpg";
 import college3 from "../Assets/Images/college3.jpeg";
 import whatsapp from "../Assets/Images/whatsapp.png";
-function Bannerone() {
+function Crousel_Images() {
   var settings = {
     dots: false,
     infinite: true,
@@ -128,4 +128,4 @@ function Bannerone() {
   );
 }
 
-export default Bannerone;
+export default Crousel_Images;
