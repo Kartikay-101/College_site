@@ -7,6 +7,13 @@ import certificate from "../Assets/Images/certificate.png";
 import course from "../Assets/Images/course.png";
 import internship from "../Assets/Images/internship.png";
 import rating from "../Assets/Images/rating.png";
+import mangalmayLogo from '../Assets/Images/Mangalmay_logo.png';
+import glbajajLogo from '../Assets/Images/GLBajaj_logo.png';
+import iimtLogo from '../Assets/Images/IIMT_logo.png';
+import mangalmayBg from '../Assets/Images/college3.jpeg';
+import glbajajBg from '../Assets/Images/GL_Bajaj.jpg';
+import iimtBg from '../Assets/Images/college2.jpg';
+
 import Crousel_Images from "./Crousel_Images";
 import Footer from "./Footer";
 
@@ -50,6 +57,7 @@ function Banner() {
     <>
       {/* college banner */}
       <Crousel_Images />
+
       {/* banner */}
       <div className="items-center justify-center flex flex-col bg-white h-full text-black">
         <img src={rankings} alt="ranking" className="h-40" />
@@ -78,6 +86,7 @@ function Banner() {
           2024
         </p>
       </div>
+
       {/* find the dream */}
       <div className="flex justify-center pb-10 bg-white ">
         <img src={naac} alt="naac" className="h-20" />
@@ -85,6 +94,7 @@ function Banner() {
           Find Your Dream College
         </h1>
       </div>
+
       {/* college search */}
       <div className="bg-white pb-10">
         <div className="flex items-center border border-gray-400 rounded-lg overflow-hidden bg-gray-100 mr-10 ml-10">
@@ -98,28 +108,62 @@ function Banner() {
           </button>
         </div>
       </div>
+
       {/* college card */}
-      <h1 className="text-4xl pl-10 pb-10 text-black bg-white">
+      <h1 className="text-4xl pl-10  text-black bg-white">
         Explore College
       </h1>
-      <div className="bg-white flex justify-center items-center h-80 p-10 w-full">
-        {[...Array(3)].map((_, index) => (
-          <div className="card image-full mr-10">
-            <figure>
-              <img src={college1} alt="gl bajaj" className="" />
+      <div className="bg-white flex justify-center items-center h-80  px-10 w-full">
+        {[
+          {
+            name: "Mangalmay Institute of Engineering and Technology",
+            courses: "Btech, Mtech, MBA, BBA, BCA",
+            logo: mangalmayLogo,
+            background: mangalmayBg,
+          },
+          {
+            name: "GL Bajaj Institute of Technology and Management",
+            courses: "Btech, Mtech, MBA, BBA, BCA",
+            logo: glbajajLogo,
+            background: glbajajBg,
+          },
+          {
+            name: "IIMT Group of Colleges",
+            courses: "Btech, Mtech, MBA, BBA, BCA",
+            logo: iimtLogo,
+            background: iimtBg,
+          },
+        ].map((college, index) => (
+          <div
+            key={index}
+            className=" relative mx-7"
+            style={{
+              backgroundImage: `url(${college.background})`,
+              backgroundSize: "cover",
+              backgroundColor: "#f0f0f0",
+              borderRadius: "50px",
+              overflow: "hidden",
+              width: "500px", // Add width
+              height: "250px", // Add height
+            }}
+          >
+            <figure className="absolute top-4 left-5">
+              <img src={college.logo} alt="college logo" className="w-12 h-12" />
             </figure>
-            <div className=" absolute card-body items-center -mt-6">
-              <h2 className="card-title  text-center text-white">
-                G L Bajaj Institute of <br /> Technology and Management
-              </h2>
+            <div className="pl-20 pr-5 pt-5 text-white">
+              <h2 className="card-title text-center">{college.name}</h2>
+              <p className="text-center text-sm mt-2">
+                Offered courses: {college.courses}
+              </p>
             </div>
-            <div className="card-body items-end justify-between flex-row ">
-              <h5 className=" text-white cursor-pointer">Get Admission</h5>
-              <h5 className=" text-white cursor-pointer">learn more..</h5>
+            <div className="absolute bottom-3 left-7 right-7 flex justify-between text-white">
+              <h5 className="cursor-pointer">Get Admission</h5>
+              <h5 className="cursor-pointer">Learn More &gt;&gt;</h5>
             </div>
           </div>
         ))}
       </div>
+
 
       {/* top reccommeded college */}
       <div className="bg-white text-black">
