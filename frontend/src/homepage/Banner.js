@@ -199,7 +199,7 @@ function Banner() {
 
             <li className="border border-black rounded-xl w-auto  pl-4 pr-4 text-center">
               <a>MTECH</a>
-            </li>
+            </li> 
             <li className="border border-black rounded-xl w-auto  pl-4 pr-4 text-center">
               <a>BCA</a>
             </li>
